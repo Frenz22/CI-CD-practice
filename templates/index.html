@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wordle — Python Edition</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='game.js') }}" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <button class="icon-button" id="help-button" aria-label="How to play">?</button>
+      <div class="brand">WORDLE</div>
+      <button class="new-game-button" id="new-game-button">New game</button>
+    </header>
+
+    <p class="subtitle">Guess the five-letter word in six tries.</p>
+    <div id="message" class="message" role="status" aria-live="polite"></div>
+
+    <section id="board" class="board" aria-label="Wordle board"></section>
+    <section id="keyboard" class="keyboard" aria-label="On-screen keyboard"></section>
+
+    <dialog id="help-dialog">
+      <h2>How to play</h2>
+      <p>Guess the five-letter word in six attempts.</p>
+      <p><span class="example green">A</span> Green means the letter is in the correct spot.</p>
+      <p><span class="example yellow">B</span> Yellow means the letter is in the word, but in another spot.</p>
+      <p><span class="example gray">C</span> Gray means the letter isn't in the word (or there are no copies left to match).</p>
+      <button class="new-game-button dialog-close" id="close-help">Got it</button>
+    </dialog>
+
+    <footer>Made with Python, Flask, HTML &amp; CSS</footer>
+  </main>
+</body>
+</html>
